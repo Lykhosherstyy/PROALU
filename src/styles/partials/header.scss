@@ -1,0 +1,244 @@
+
+@import "mixins";
+
+
+/*-----header----------------------------------------*/
+.header{
+	background-color: #fff;
+	position: relative;
+	@include box-shadow(1px,1px, 1px,rgba(0,0,0,0.5));
+	.container{
+		@include clr();
+	}
+	.logo{
+		float: left;
+		width: 25%;
+		padding: 21px 0;
+		@include br(phablet){
+			width: 100%;
+			text-align: center;
+		}
+	}
+	.header_aside{
+		float: right;
+		width: 75%;
+		@include clr();
+		@include br(phablet){
+			width: 100%;
+			padding-bottom: 10px;
+		}
+		.nav{
+			float: left;
+			ul{
+				@include br(phablet){
+					display: none;
+				}
+			}
+			@include br(phablet){
+				float: none;
+			}
+		}
+	}
+}
+.nav{
+	li{
+		display: inline-block;
+		@include br(phablet){
+			width: 100%;
+			border-bottom: 1px solid #e0e0e0;
+		}
+		&:hover .sub_menu{
+				display: block;
+				@include br(tablet){
+					display: none;
+				}
+			}
+		&:first-child:hover a{
+			background-color: #8c8d8d;
+			color: #fff;
+			@include br(tablet){
+				background:inherit;
+				color: inherit;
+			}
+			@include br(phablet){
+				background-color: #d1d1d1;
+			}
+		}
+		a{
+			display: block;
+			width: 100%;
+			padding: 30px 30px;
+			font-family: Tahoma, sans-serif;
+			font-size: 13px;
+			color: #333333;
+			text-transform: uppercase;
+			&:hover{
+				border-bottom: 2px solid  #ff4700;
+				@include br(phablet){
+					border: none;
+					background-color: #d1d1d1;
+				}
+			}
+			@include br(sm-desktop){
+				padding: 30px 25px;
+			}
+			@include br(tablet){
+				padding: 30px 8px;
+			}
+			@include br(phablet){
+				padding: 10px 8px;
+				font-weight: bold;
+			}
+		}
+	}
+}
+.sub_menu{
+	display:none;
+	position: absolute;
+	top:73px;
+	left:0;
+	z-index: 10;
+	width: 100%;
+	background-color: #8c8d8d;
+	ul{
+		text-align: justify;
+    	&::after{
+    		width: 100%;
+		    height: 0;
+		    visibility: hidden;
+		    overflow: hidden;
+		    content: '';
+		    display: inline-block;
+    	}
+	}
+	li{
+		display: inline-block;
+		vertical-align: top;
+		width: 115px;
+		padding: 25px 0;
+		a{
+			padding: 0;
+			position: relative;
+			&:hover{
+				border: none;
+			}
+			&:hover .overlay{
+				opacity: 1;
+			}
+			img{
+				max-width: 100%;
+				height: auto;
+			}
+		}
+		p{
+			margin-top: 10px;
+			opacity: 1;
+			font-family: Tahoma, sans-serif;
+			font-size: 14px;
+			color: #fff;
+		}
+	}	
+}
+.overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0 5px;
+    height: 117px;
+    text-align: center;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000,endColorstr=#000000);
+    filter: alpha(opacity=40);
+    zoom: 1;
+    background: rgba(0,0,0,0.7);
+    -webkit-transition: all .35s ease-in-out;
+    -moz-transition: all .35s ease-in-out;
+    -ms-transition: all .35s ease-in-out;
+    -o-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+    span{
+    	position: relative;
+    	top: 40%;
+    	font-size: 14px;
+    	text-transform: none;
+    	color: #fff;
+    }
+}
+.lang_switch{
+	float: right;
+	@include br(phablet){
+		display: none;
+	}
+	li{
+		width: 70px;
+		&:hover ul{
+			visibility: visible;
+		}
+		&:hover a{
+			border: none;
+			background-color: #8c8d8d;
+			color: #fff;
+		}
+		&:hover .lang_switch_selected:after{
+		content: "\f106";
+	    font-family: FontAwesome;
+	}
+		a{
+			display: block;
+			text-transform: uppercase;
+			font-size: 13px;
+			padding: 30px 20px;
+			color: #999999;
+			border-left: 1px solid #dddddd;
+			border-right: 1px solid #dddddd;
+		}
+		ul{
+			visibility: hidden;
+			height: 0;
+		    top: 25px;
+		    left: 0;
+		    width: 70px;
+		    li{
+		    	background-color: #8c8d8d;
+		    	a{
+		    		&:hover{
+		    			background-color:#5A6363;
+		    		}
+		    	}
+		    }
+		}
+	}
+}
+.lang_switch_selected{
+	position: relative;
+	height: 75px;
+	background-color: #fff;
+	&::after{
+		content: "\f107";
+	    font-family: FontAwesome;
+	    position: relative;
+	    right: -5px;
+	}
+}
+.active{
+	color: #ff4700!important;
+	border-bottom: 2px solid  #ff4700;
+	@include br(phablet){
+		border: none;
+	}
+}
+.mobile-menu{
+	display: none;
+	text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #F34F10;
+	@include br(phablet){
+		width: 100%;
+		display: block;
+	}
+
+}

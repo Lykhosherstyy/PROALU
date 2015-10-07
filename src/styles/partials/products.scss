@@ -1,0 +1,166 @@
+.products{
+	background: url('../images/products_bg.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	@include background-size(cover);
+	.products_text{
+		width: 100%;
+		padding-top: 115px;
+		@include br(phablet){
+			padding-top: 25px;
+		}
+	}
+}
+.products_text_inner{
+	max-width: 820px;
+	margin:0 auto;
+	text-align: center;
+	h1{
+		padding:10px 15px;
+		font-size: 36px;
+		font-weight: bold;
+		line-height: 40px;
+		text-transform: uppercase;
+		color: #fff;
+		background: rgb(0, 0, 0);
+		background-color:rgba(0,0,0,0.7);
+		-ms-filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#88000000', endColorstr='#88000000'); /* IE */
+		@include br(phablet){
+			font-size: 24px;
+		}
+	}
+	h2{
+		display: inline-block;
+		padding:5px 15px;
+		margin-top: 5px;
+		font-size: 24px;
+		color: #fff;
+		background: rgb(0, 0, 0);
+		text-align: center;
+		background-color:rgba(0,0,0,0.7);
+		-ms-filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#88000000', endColorstr='#88000000'); /* IE */
+		@include br(phablet){
+			font-size: 18px;
+		}
+	}
+	a{
+		color: #fff;
+		
+	}
+}
+.btn{
+	display: inline-block;
+	margin-top: 10px;
+	height: 45px;
+	padding: 11px 40px;
+	background-color: #212121;
+	@include border-radius(5px);
+	.link_inner{
+	font-size: 14px;
+	text-transform: uppercase;
+		&::after{
+			content:'Garance nejlepší ceny'
+		}
+		.fa{
+			margin-right:10px;
+			padding: 5px 8px 4px 7px;
+			font-size: 13px;
+			color: #fff;
+			@include border-radius(50%);
+			background-color: #ff4700;
+		}
+	}
+}
+.product_menu{
+	margin-top:125px; 
+	text-align: center;
+	padding-bottom: 45px;
+	@include br(phablet){
+		margin-top: 25px;
+	}
+	.title_wrap{
+	    position: relative;
+	    margin-bottom: 20px;
+	    @include br(phablet){
+			display: none;
+		}
+	    span{
+	    	display: inline-block;
+		    font-size: 14px;
+		    padding: 0 15px;
+		    color: #fff;
+		    text-shadow: 1px 0 3px rgba(0,0,0,0.35);
+		    &:after{
+		    	content: "";
+			    position: absolute;
+			    height: 1px;
+			    bottom: 8px;
+			    right: 0;
+			    width: 44%;
+			    background: rgba(255,255,255,0.3);
+		    }
+		    &:before{
+		    	content: "";
+			    position: absolute;
+			    height: 1px;
+			    bottom: 8px;
+			    left: 0;
+			    width: 44%;
+			    background: rgba(255,255,255,0.3);
+		    }
+	    }
+	}
+}
+.product_menu{
+	position: relative;
+	ul{
+		display: table;
+	    width: 100%;
+	    table-layout: fixed;
+	    @include br(phablet){
+			display: none;
+			position: absolute;
+			top: 35px;
+			z-index: 100;    
+		}
+	    li{
+	    	display: table-cell;
+		    background: #fff;
+		    text-align: center;
+		    border: 1px solid #222;
+		    border-left: none;
+		    vertical-align: middle;
+		    @include br(phablet){
+				display: block;
+				width: 50%;
+				border:none;
+				float: left;
+			}
+			@include br(mobile){
+				width: 100%;
+			}
+		    a{
+		    	display: block;
+			    text-transform: uppercase;
+			    font-size: 13px;
+			    font-weight: bold;
+			    line-height: 50px;
+			    color: #000;
+			    background: #fff;
+			    &:hover{
+			    	background-color: #EFEAEA;
+			    	@include br(phablet){
+			    		background-color: #827B7B;
+					}
+			    }
+			    @include br(tablet){
+					line-height: 25px;
+				}
+				@include br(phablet){
+					color: #fff;
+					background-color: #827B7B;
+				}
+		    }
+	    }
+	}
+}

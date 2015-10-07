@@ -1,0 +1,160 @@
+footer{
+	background-color: #939494;
+}
+.footer_top{
+	@include clr();
+	
+}
+.footer_logo{
+	float: left;
+	padding: 16px 0 16px 0;
+	@include br(phablet){
+		display: none;
+	}
+	span{
+		display: inline-block;
+		width: 80px;
+		font-size: 11px;
+		color: #fff;
+		line-height: 14px;
+		@include br(tablet){
+			display: none;
+		}
+	}
+}
+.footer_aside{
+	float: right;
+	width: 80%;
+	@include br(sm-desktop){
+		width: 75%;
+	}
+	@include br(phablet){
+		width: 100%;
+	}
+	.footer_menu{
+		float: left;
+		padding: 24px 0;
+		@include br(phablet){
+			float: none;
+			text-align: center;
+		}
+		@include br(mobile){
+			padding: 10px 0;
+		}
+		ul{
+			li{
+				display: inline-block;
+				margin-left: 60px;
+				@include br(phablet){
+					margin-left: 20px;
+				}
+				a{
+					font-size:12px;
+					text-transform: uppercase;
+			    	color: #fff;
+				}
+			}
+		}
+	}
+}
+.footer_info{
+	float: left;
+	margin-left: 85px;
+	padding: 20px 0;
+	@include br(sm-desktop){
+		float: left;
+		margin-left: 40px;
+		padding: 0;
+	}
+	@include br(tablet){
+		float: right;
+	}
+	@include br(phablet){
+		float:none;
+		margin-left: 0;
+		text-align: center;
+		border-top:  1px dotted #a6a6a6;
+	}
+	a{
+		display: inline-block;
+		font-size: 12px;
+		color: #fff;
+		margin-right: 25px;
+		&:last-child{
+			margin-right: 0;
+		}
+		@include br(sm-desktop){
+			display: block;
+			margin-top: 5px;
+		}
+		@include br(phablet){
+			display: inline-block;
+			margin-right: 10px;
+		}
+	}
+	.fa{
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		padding: 10px 0;
+		margin-right: 10px;
+		font-size: 12px;
+		color: #fff;
+		@include border-radius(50%);
+		background-color: #7c7c7c;
+	}
+}
+.footer_facebook{
+	float: right;
+	padding: 25px 15px 20px 15px; 
+	border-left: 1px dotted #a6a6a6;
+	border-right: 1px dotted #a6a6a6;
+	@include br(tablet){
+		display: none;
+	}
+	.facebook{
+		height: 30px;
+		background-color: #3a5795;
+		padding: 5px 0;
+		padding-left:15px;
+		span{
+			display: inline-block;
+			padding-right: 10px;
+			font-size: 12px;
+			color: #fff;
+			border-right: 1px solid rgba(255,255,255,0.2);
+			.fa{
+				margin-right: 10px;
+			}
+		}
+		.facebook_count{
+			font-size: 11px;
+			border-right: none;
+		}
+	}
+}
+.footer_bottom{
+	padding: 10px 0;
+	border-top: 1px solid rgba(255,255,255,0.2);
+	@include clr();
+	p{
+		display: inline-block;
+		font-size: 11px;
+		color: #eeeeee;
+	}
+	.col-left{
+		font-weight: normal;
+		text-transform: none;
+		@include br(mobile){
+			float: none;
+			text-align: center;
+		}
+	}
+	.col-right{
+		line-height: 1;
+		@include br(mobile){
+			float: none;
+			text-align: center;
+		}
+	}
+}
